@@ -3,8 +3,7 @@ var app = express();
 var bodyParser = require('body-parser');
 var path = require('path');
 var index = require('./routes/index.js');
-// var rent = require('./routes/rent.js');
-// var sale = require('./routes/sale.js');
+var messageboard = require('./routes/messageboard.js');
 var mongoose = require('mongoose');
 
 /** ---------- MIDDLEWARE ---------- **/
@@ -12,10 +11,8 @@ app.use(express.static(path.join(__dirname, './public')));
 app.use(bodyParser.json()); // needed for angular requests
 
 /** ---------- EXPRESS ROUTES ---------- **/
-// app.use('/rent', rent);
-// app.use('/sale', sale);
+app.use('/messageboard', messageboard);
 app.use('/', index);
-
 
 /** -------- MONGOOSE CONNECTION --------**/
 var databaseUrl = 'mongodb://localhost:27017/antares';
