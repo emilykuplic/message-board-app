@@ -6,7 +6,7 @@ myApp.config(function($routeProvider){
   .when('/messageboard',{
     controller: 'MessageController',
     controllerAs:'mc',
-    templateUrl:'/views/templates/message.html'
+    templateUrl:'/views/templates/messageboard.html'
   })
   // //if route above is not foundabout go to the /home route.
   .otherwise({

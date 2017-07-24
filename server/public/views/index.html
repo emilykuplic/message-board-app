@@ -5,22 +5,20 @@
   <script src="/vendors/angular.min.js"></script>
   <script type="text/javascript" src="/vendors/angular-route.min.js"></script>
   <script src="scripts/client.js"></script>
-  <script type="text/javascript" src="scripts/controllers/rent.controller.js"></script>
-  <script type="text/javascript" src="scripts/controllers/sale.controller.js"></script>
+  <script type="text/javascript" src="scripts/controllers/messsageboard.controller.js"></script>
   <link rel="stylesheet" href="/vendors/bootstrap.min.css"/>
   <title>Message Board Application</title>
 </head>
 <body ng-app="myApp">
-  <div class="container">
+  <div class="container" ng-controller="MessageController as mc">
     <h1>Antares Message Board</h1>
 <div class="row">
 <div class="col-md-12">
-<form class="" action="index.html" method="post">
-<label for="username">User Name:</label>
+<label type="text" for="username" ng-model="mc.newMessage.userName">User Name:</label>
 <input type="text" name="" value="" placeholder="User Name">
-<label for="message">Message:</label>
+<label type="text" for="message" ng-model="mc.newMessage.userMessage">Message:</label>
 <input type="text" name="" value="" placeholder="Type message here...">
-</form>
+<button type="button btn-primary" name="button" ng-click"mc.addMessage()">Submit</button>
 </div>
 </div>
 
